@@ -1,0 +1,22 @@
+doctype html
+html
+  head
+    meta content=("text/html; charset=UTF-8") http-equiv="Content-Type" /
+    title Homeday
+  body class="container-fluid form-group"
+    h1.text-primary Homeday Service Usage 
+    = form_tag("/properties", method: "get") do
+      p class="badge badge-primary font-weight-bold"
+        = label_tag(:lng, "Longitude:")
+        = text_field_tag(:lng)
+      p class="badge badge-primary font-weight-bold"
+        = label_tag(:lat, "Latitude:")
+        = text_field_tag(:lat)
+      p class="badge badge-primary font-weight-bold"
+        = label_tag(:property_type, "Property type:")
+        = text_field_tag(:property_type)
+      p class="badge badge-primary font-weight-bold"
+        = label_tag(:marketing_type, "Marketing type:")
+        = text_field_tag(:marketing_type)
+      p
+        = submit_tag("Search", :id=>"button", :class=>"btn btn-success")

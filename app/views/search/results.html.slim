@@ -1,0 +1,34 @@
+doctype html
+html
+  head
+    meta content=("text/html; charset=UTF-8") http-equiv="Content-Type" /
+  body
+   div 
+      - if @properties
+         ul class="text-primary"
+            - @properties.each do |property|
+               | =====================
+               li
+                  | ID: #{property['id']}
+               li
+                  | House Number: #{property['house_number']}
+               li
+                  | Street: #{property['street']}
+               li
+                  | City: #{property['city']}
+               li
+                  | Zip Code: #{property['zip_code']}
+               li
+                  | Lat: #{property['lat']}
+               li
+                  | Lng: #{property['lng']}
+               li
+                  | Price: #{property['price']}
+               | =====================
+      -else
+         | Errors:
+         ul
+            -@errors.each do |key, value|
+               li class="text-danger"
+                  | #{key}: #{value}
+               
